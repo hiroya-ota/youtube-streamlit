@@ -1,44 +1,7 @@
-from optparse import Option
-from turtle import right
 import streamlit as st
-import numpy as np
-import pandas as pd
-from PIL import Image
 import time
 
 st.title('Strealit 超入門')
-st.write('DataFrame')
-
-df = pd.DataFrame({
-    '1列目':[1,2,3,4],
-    '2列目':[10,20,30,40]
-})
-#st.write(df)
-#st.table(df)
-#st.dataframe(df.style.highlight_max(axis=0), width=300, height=300)
-
-df = pd.DataFrame(
-    np.random.rand(20, 3),
-    columns=['a','b','c']
-)
-#st.line_chart(df)
-#st.area_chart(df)
-#st.bar_chart(df)
-
-df = pd.DataFrame(
-    np.random.rand(100, 2) / [50, 50] + [35.69, 139.70],
-    columns=['lat','lon']
-)
-#st.map(df)
-
-
-st.write('Image画像')
-
-if st.checkbox('Show Image'):
-    img = Image.open('111.jpg')
-    st.image(img, caption='Imageです', use_column_width=True)
-
-
 st.write('Intaractibe Widget')
 
 option = st.selectbox(
@@ -78,15 +41,3 @@ for i in range(100):
     time.sleep(0.1)
 
 'Done!!!'
-
-"""
-# 章
-## 節
-### 項
-
-```python
-import streamlit as st
-import numpy as np
-import pandas as pd
-```
-"""
